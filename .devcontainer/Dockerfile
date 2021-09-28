@@ -7,9 +7,9 @@ RUN apt-get update && apt-get install -y \
     mysql-server
 
 RUN pip3 install \
-    mysql-connector-python \
-    Flask \
-    autopep8
+    mysql-connector-python==8.0.26 \
+    Flask==2.0.1 \
+    autopep8==1.5.7
 
 RUN service mysql start && \
     mysql --execute="CREATE USER 'sql_task'@'localhost' IDENTIFIED BY 'sql_task';" && \
